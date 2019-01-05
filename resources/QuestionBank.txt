@@ -1,0 +1,20 @@
+How many seconds does it take to break Obsidian with a diamond pick?|Easy|tag1
+The dimensions of a 'chunk'?(XxXxX)|Easy|tag2
+How many chunks are loaded around a player?|Easy|tag3
+Zombies and Skeletons can survive in daylight if they are?|Easy|tag5
+1 Wheat + 1 Cocoa Beans + 1 Wheat =?|Easy|tag2
+Plant me underwater to create a 1x1x1 air bubble?|Easy|tag4
+On this server Giants drop?|Medium|tag4
+Another name for a redstone repeater is?|Medium|tag3
+A Jack-O-Lanterns luminance value is?|Medium|tag2
+The most items you can carry?|Medium|tag4
+You can kill a slime with a snowball?|Medium|tag3
+All cows produce milk?|Medium|tag4
+Bricks always take how many second to break?|Medium|tag2
+Bedrock(Adminium) has the "hardness" of?|Medium|tag5
+A crafting table takes how many wood blocks (logs)?|Hard|tag5
+How old are the trees in Mincraft?(number of rings)|Hard|tag2
+Name three stackable tools.|Hard|tag5
+If water flows into a lava spring, what is created?|Hard|tag5
+Approximately how many seconds does it take to travel from bedrock to top of sky on a ladder?|Hard|tag3
+The only mob that can not climb ladders?|Hard|tag4
