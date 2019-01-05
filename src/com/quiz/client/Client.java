@@ -15,16 +15,24 @@ public class Client {
 		//reading the file from the resources folder
 		bank=HelperServices.FileRead("./resources/QuestionBank.txt");
 		
-		Map<String, List<Integer>> difficultyMap = new HashMap<>();
-		Map<String, List<Integer>> tagMap = new HashMap<>();
+		Map<String, List<Integer>> difficultyMap;
+		Map<String, List<Integer>> tagMap;
 		
 		//will give the mapping for the tags
 		tagMap = HelperServices.getMapping(bank.getTags());
 		System.out.println(tagMap);	
 		
-		//will give the mapping for the diffculty level
+		//will give the mapping for the difficulty level
 		difficultyMap = HelperServices.getMapping(bank.getDifficultyLevels());
 		System.out.println(difficultyMap);
+		
+		Map<String,Integer> noOfQuestionInTag; 
+		Map<String,Integer> noOfQuestionDifficulty; 
+		//will give the count of number of questions in each tag
+		noOfQuestionInTag = HelperServices.getCount(bank.getTags());
+		
+		//will give the count of number of questions diffciulty wise
+		noOfQuestionDifficulty = HelperServices.getCount(bank.getDifficultyLevels());
 		
 	}
 }

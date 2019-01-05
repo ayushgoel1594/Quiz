@@ -6,9 +6,13 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import com.quiz.classes.QuestionBank;
 
@@ -59,6 +63,17 @@ public class HelperServices {
 			}
 			tempMap.get(list.get(i)).add(i);
 		}
+		return tempMap;
+	}
+	
+	public static Map<String, Integer> getCount(List<String> list){
+		Map<String, Integer> tempMap = new HashMap<>();
+		Set<String> distinct = new HashSet<>(list);
+		
+		for(String s: distinct){
+			tempMap.put(s,Collections.frequency(list, s));
+		}
+		System.out.println(tempMap);
 		return tempMap;
 	}
 
