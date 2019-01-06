@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 
 import com.quiz.classes.QuestionBank;
@@ -66,6 +67,7 @@ public class HelperServices {
 		return tempMap;
 	}
 	
+	//helper service for getting count the number of questions in each difficulty levels and tags
 	public static Map<String, Integer> getCount(List<String> list){
 		Map<String, Integer> tempMap = new HashMap<>();
 		Set<String> distinct = new HashSet<>(list);
@@ -73,8 +75,78 @@ public class HelperServices {
 		for(String s: distinct){
 			tempMap.put(s,Collections.frequency(list, s));
 		}
-		System.out.println(tempMap);
+		//System.out.println(tempMap);
 		return tempMap;
 	}
-
+	
+	//helper service for getting a random question from the given list 
+	public static Integer getQuestion(QuestionBank bank, String questionType){
+		Integer random = bank.getDifficultyMap().get(questionType).get(new Random().nextInt(bank.getDifficultyMap().get(questionType).size()));
+		System.out.println(random);
+		modifyCounterVariables(bank, questionType, random);
+		return random;
+	}
+	
+	//helper service for changing and modifying the values of counter variables
+	public static void modifyCounterVariables(QuestionBank bank, String questionType, Integer questionNumber){
+		bank.getDifficultyMap().get(questionType).remove(questionNumber);
+		bank.getNoOfQuestionDifficulty().put(questionType,bank.getNoOfQuestionDifficulty().get(questionType)-1);
+		
+		System.out.println(bank.getNoOfQuestionDifficulty());
+		System.out.println(bank.getDifficultyMap());
+		
+		String tag= bank.getTags().get(questionNumber);
+		System.out.println(tag);
+		
+		bank.getNoOfQuestionInTag().put(tag,bank.getNoOfQuestionInTag().get(tag)-1);
+		System.out.println(bank.getNoOfQuestionInTag());
+		
+		bank.getTagMap().get(tag).remove(questionNumber);
+		
+		System.out.println(bank.getTagMap());
+		
+	}
+	
+	//helper service for checking which tags are not not included yet in the list
+	public static Set<String> leftTags(List<Integer> questionSetList,QuestionBank bank){
+		Set<String> leftTags = new HashSet<>(bank.getTags());
+		Set<String> tempSet = new HashSet<>();
+		for(Integer i: questionSetList) {
+			tempSet.add(bank.getTags().get(i));
+		}
+//		System.out.println(leftTags);
+//		System.out.println(tempSet);
+		leftTags.removeAll(tempSet);
+		System.out.println(leftTags);
+		return leftTags;
+	}
+	
+	//getting question based on tag instead of difficulty
+	public static Integer getQuestionBasedOnTag(QuestionBank bank, String tag){
+		Integer random = bank.getTagMap().get(tag).get(new Random().nextInt(bank.getTagMap().get(tag).size()));
+		System.out.println("In getQuestionByTag:");
+		System.out.println(random);
+		modifyCounterVariablesBasedOnTag(bank, tag, random);
+		return random;
+	}
+	
+	//helper service for changing and modifying the values of counter variables based on tags
+		public static void modifyCounterVariablesBasedOnTag(QuestionBank bank, String tag, Integer questionNumber){
+			bank.getTagMap().get(tag).remove(questionNumber);
+			bank.getNoOfQuestionInTag().put(tag,bank.getNoOfQuestionInTag().get(tag)-1);
+			
+			System.out.println(bank.getNoOfQuestionInTag());
+			System.out.println(bank.getTagMap());
+			
+			String difficulty= bank.getDifficultyLevels().get(questionNumber);
+			System.out.println(difficulty);
+			
+			bank.getNoOfQuestionDifficulty().put(difficulty,bank.getNoOfQuestionDifficulty().get(difficulty)-1);
+			System.out.println(bank.getNoOfQuestionDifficulty());
+			
+			bank.getDifficultyMap().get(difficulty).remove(questionNumber);
+			
+			System.out.println(bank.getDifficultyMap());
+			
+		}
 }
