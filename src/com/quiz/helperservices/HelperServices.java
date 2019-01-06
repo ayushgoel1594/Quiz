@@ -81,8 +81,9 @@ public class HelperServices {
 	
 	//helper service for getting a random question from the given list 
 	public static Integer getQuestion(QuestionBank bank, String questionType){
+		//System.out.println(questionType);
 		Integer random = bank.getDifficultyMap().get(questionType).get(new Random().nextInt(bank.getDifficultyMap().get(questionType).size()));
-		System.out.println(random);
+		//System.out.println(random);
 		modifyCounterVariables(bank, questionType, random);
 		return random;
 	}
@@ -92,18 +93,18 @@ public class HelperServices {
 		bank.getDifficultyMap().get(questionType).remove(questionNumber);
 		bank.getNoOfQuestionDifficulty().put(questionType,bank.getNoOfQuestionDifficulty().get(questionType)-1);
 		
-		System.out.println(bank.getNoOfQuestionDifficulty());
-		System.out.println(bank.getDifficultyMap());
+		//System.out.println(bank.getNoOfQuestionDifficulty());
+		//System.out.println(bank.getDifficultyMap());
 		
 		String tag= bank.getTags().get(questionNumber);
-		System.out.println(tag);
+		//System.out.println(tag);
 		
 		bank.getNoOfQuestionInTag().put(tag,bank.getNoOfQuestionInTag().get(tag)-1);
-		System.out.println(bank.getNoOfQuestionInTag());
+		//System.out.println(bank.getNoOfQuestionInTag());
 		
 		bank.getTagMap().get(tag).remove(questionNumber);
 		
-		System.out.println(bank.getTagMap());
+		//System.out.println(bank.getTagMap());
 		
 	}
 	
@@ -117,15 +118,15 @@ public class HelperServices {
 //		System.out.println(leftTags);
 //		System.out.println(tempSet);
 		leftTags.removeAll(tempSet);
-		System.out.println(leftTags);
+		//System.out.println(leftTags);
 		return leftTags;
 	}
 	
 	//getting question based on tag instead of difficulty
 	public static Integer getQuestionBasedOnTag(QuestionBank bank, String tag){
 		Integer random = bank.getTagMap().get(tag).get(new Random().nextInt(bank.getTagMap().get(tag).size()));
-		System.out.println("In getQuestionByTag:");
-		System.out.println(random);
+		//System.out.println("In getQuestionByTag:");
+		//System.out.println(random);
 		modifyCounterVariablesBasedOnTag(bank, tag, random);
 		return random;
 	}
@@ -135,18 +136,18 @@ public class HelperServices {
 			bank.getTagMap().get(tag).remove(questionNumber);
 			bank.getNoOfQuestionInTag().put(tag,bank.getNoOfQuestionInTag().get(tag)-1);
 			
-			System.out.println(bank.getNoOfQuestionInTag());
-			System.out.println(bank.getTagMap());
+			//System.out.println(bank.getNoOfQuestionInTag());
+			//System.out.println(bank.getTagMap());
 			
 			String difficulty= bank.getDifficultyLevels().get(questionNumber);
-			System.out.println(difficulty);
+			//System.out.println(difficulty);
 			
 			bank.getNoOfQuestionDifficulty().put(difficulty,bank.getNoOfQuestionDifficulty().get(difficulty)-1);
-			System.out.println(bank.getNoOfQuestionDifficulty());
+			//System.out.println(bank.getNoOfQuestionDifficulty());
 			
 			bank.getDifficultyMap().get(difficulty).remove(questionNumber);
 			
-			System.out.println(bank.getDifficultyMap());
+			//System.out.println(bank.getDifficultyMap());
 			
 		}
 }

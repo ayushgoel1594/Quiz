@@ -6,7 +6,7 @@ Zombies and Skeletons can survive in daylight if they are?|Easy|tag5
 Plant me underwater to create a 1x1x1 air bubble?|Easy|tag4
 On this server Giants drop?|Medium|tag4
 Another name for a redstone repeater is?|Medium|tag3
-A Jack-O-Lanterns luminance value is?|Medium|tag2
+A Jack-O-Lanterns luminance value is?|Medium|tag1
 The most items you can carry?|Medium|tag4
 You can kill a slime with a snowball?|Medium|tag3
 All cows produce milk?|Medium|tag4
@@ -18,3 +18,11 @@ Name three stackable tools.|Hard|tag5
 If water flows into a lava spring, what is created?|Hard|tag5
 Approximately how many seconds does it take to travel from bedrock to top of sky on a ladder?|Hard|tag3
 The only mob that can not climb ladders?|Hard|tag4
+Saplings have how many branches?|Hard|tag5
+You need this to plant a sapling on sand?|Easy|tag4
+For a sapling to grow it needs how many block clear above?|Hard|tag3
+Use this to instantly grow saplings and crops|Easy|tag1
+How many hearts does a cooked porkchop heal?|Hard|tag2
+Name the two "Neutral" mobs|Medium|tag2
+What is the only mob that can climb walls?|Medium|tag1
+Who created Minecraft?|Medium|tag5
